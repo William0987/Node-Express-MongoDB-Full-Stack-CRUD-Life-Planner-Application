@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<h2><%= month.month %> Plans </h2>
+
+<section>
+    <% month.forEach(function(month){ %>
+        <div>Plan: <%= month.plan %></div>
+        <div>Starting Day Number Within Month: <%= month.dayNumber %></div>
+        <div>Number of Days The Plan Will Span<%= month.daySpan %></div>
+        <div>Completed: <%= month.completed %></div>
+        <form action="/months/<%= month.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+        <a href = "/months/<%= month.id %>/edit">Edit Plan</a>
+        </form>
+    <% }) %>
+</section>
+
+<%- include('../partials/footer') %>

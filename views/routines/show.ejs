@@ -3,10 +3,13 @@
 
 <section>
     <% routine.forEach(function(routine){ %>
-        <div>Day: <%= routine.day %></div>
         <div>Routine: <%= routine.routine %></div>
         <div>Duration: <%= routine.duration %></div>
         <div id="startingTime">Starting Time: <%= routine.startingTime %></div>
+        <form action="/routines/<%= routine.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+        <a href = "/routines/<%= routine.id %>/edit">Edit Routine</a>
+        </form>
     <% }) %>
 </section>
 

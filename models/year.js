@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const yearSchema = new Schema({
     year: {
-        type: String
+        type: Number
     },
     goal: {
         type: String

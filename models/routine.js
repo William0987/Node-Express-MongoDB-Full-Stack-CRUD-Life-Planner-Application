@@ -12,7 +12,7 @@ const routineSchema = new Schema({
         type: Number
     },
     startingTime: {
-        type:Number
+        type: Number
     }
 }, {
    timestamps: true

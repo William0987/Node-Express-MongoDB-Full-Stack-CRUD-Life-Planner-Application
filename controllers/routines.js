@@ -47,9 +47,40 @@ async function create(req, res) {
     }
   }
 
+async function deleteRoutine(req, res) {
+  await Routine.findOneAndDelete(
+    {_id: req.params.day}
+  );
+  res.redirect('/routines/show');
+}
+
+async function edit(req, res) {
+  const routine = await Routine.findOne({_id: req.params.day});
+  if (!routine) return res.redirect('/routines/show');
+  res.render('routines/edit', { routine });
+}
+
+async function update(req, res) {
+  try {
+    const updatedRoutine = await Routine.findOneAndUpdate(
+      {_id: req.params.day},
+      req.body,
+      {new: true}
+    );
+    return res.redirect(`/routines/${updatedRoutine._id}`);
+  } catch (e) {
+    console.log(e.message);
+    return res.redirect('/routines');
+  }
+}
+
+
 module.exports = {
     index,
     show,
     new: newRoutine, 
-    create
+    create,
+    delete: deleteRoutine,
+    update,
+    edit
 };
