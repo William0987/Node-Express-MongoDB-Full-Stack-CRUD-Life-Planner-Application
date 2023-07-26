@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<h2>Set Your Routines Below</h2>
+<form action="/routines" method="POST">
+  <label>Day:</label>
+    <select name="day">
+      <option value="Monday">Monday</option> 
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option> 
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+  </select>
+  <label>Routine:</label>
+  <input type="text" name="routine">
+  <label>Duration:</label>
+  <input type="number" name="duration">
+  <label>Starting Time:</label>
+  <input type="number" name="startingTime">
+  <button type="submit">Add Weekly Routine</button>
+</form>
+
+
+<%- include('../partials/footer') %>

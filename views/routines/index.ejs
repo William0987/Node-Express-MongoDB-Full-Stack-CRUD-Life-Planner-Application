@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<h2>All Routines</h2>
+<table>
+  <tbody>
+    <tr id="indexRoutines">
+      <th>Number of Routines Within Monday: <%=lengthArr[0]%></th>
+      <td><a href="routines/Monday">DETAILS</a></td>
+      <th>Number of Routines Within Tuesday: <%=lengthArr[1]%></th>
+      <td><a href="routines/Tuesday">DETAILS</a></td>
+      <th>Number of Routines Within Wednesday: <%=lengthArr[2]%></th>
+      <td><a href="routines/Wednesday">DETAILS</a></td>
+      <th>Number of Routines Within Thursday: <%=lengthArr[3]%></th>
+      <td><a href="routines/Thursday">DETAILS</a></td>
+      <th>Number of Routines Within Friday: <%=lengthArr[4]%></th>
+      <td><a href="routines/Friday">DETAILS</a></td>
+      <th>Number of Routines Within Saturday: <%=lengthArr[5]%></th>
+      <td><a href="routines/Saturday">DETAILS</a></td>
+      <th>Number of Routines Within Sunday: <%=lengthArr[6]%></th>
+      <td><a href="routines/Sunday">DETAILS</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<th>
+<a href = "routines/new"><button>Add Weekly Routine</button></a>
+</th>
+
+<%- include('../partials/footer') %>

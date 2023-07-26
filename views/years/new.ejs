@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<h2>Set Your Goals Below</h2>
+<form action="/years" method="POST">
+  <label>Year:</label>
+  <input type="number" name="year" min="2023">
+  <label>Goal:</label>
+  <input type="text" name="goal">
+  <label>Description:</label>
+  <input type="text" name="description">
+  <label>Priority</label>
+  <input type="text" name="priority">
+  <label>Completed:</label>
+  <input type="text" name="completed">
+  <button type="submit">Add Yearly Goal</button>
+</form>
+
+
+<%- include('../partials/footer') %>

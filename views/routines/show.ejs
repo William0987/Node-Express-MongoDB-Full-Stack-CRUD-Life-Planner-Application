@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<h2><%= routine.day %> Routines</h2>
+
+<section>
+    <% routine.forEach(function(routine){ %>
+        <div>Day: <%= routine.day %></div>
+        <div>Routine: <%= routine.routine %></div>
+        <div>Duration: <%= routine.duration %></div>
+        <div id="startingTime">Starting Time: <%= routine.startingTime %></div>
+    <% }) %>
+</section>
+
+<%- include('../partials/footer') %>
