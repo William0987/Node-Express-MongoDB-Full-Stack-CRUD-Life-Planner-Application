@@ -1,35 +1,36 @@
 <%- include('../partials/header') %>
-
-<h2>Set Your Routines Below</h2>
-<form action="/months" method="POST">
-    <label>Plan:</label>
-    <textarea name="plan"></textarea>
-    <label>Month:</label>
-    <select name="month">
-      <option value="January">January</option> 
-      <option value="February">February</option>
-      <option value="March">March</option>
-      <option value="April">April</option>
-      <option value="May">May</option> 
-      <option value="June">June</option>
-      <option value="July">July</option>
-      <option value="August">August</option> 
-      <option value="September">September</option>
-      <option value="October">October</option>
-      <option value="November">November</option>
-      <option value="December">December</option> 
-    </select>
-    <label>Starting Day Number Within Month:</label>
-    <input type="number" name="dayNumber">
-    <label>Number of Days The Plan Will Span</label>
-    <input type="number" name="daySpan">
-    <label>Completed</label>
-    <select name="completed">
-        <option value="yes">Yes</option> 
-        <option value="no">No</option> 
-    </select>
-    <button type="submit">Add New Plan</button>
-</form>
+<% if (user) { %>
+  <h2>Set Your Routines Below</h2>
+  <form action="/months" method="POST">
+      <label>Plan:</label>
+      <textarea name="plan"></textarea>
+      <label>Month:</label>
+      <select name="month">
+        <option value="January">January</option> 
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option> 
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option> 
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option> 
+      </select>
+      <label>Starting Day Number Within Month:</label>
+      <input type="number" name="dayNumber">
+      <label>Number of Days The Plan Will Span:</label>
+      <input type="number" name="daySpan">
+      <label>Completed</label>
+      <select name="completed">
+          <option value="yes">Yes</option> 
+          <option value="no">No</option> 
+      </select>
+      <button type="submit">Add New Plan</button>
+  </form>
+<% } %>
 
 
 <%- include('../partials/footer') %>

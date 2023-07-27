@@ -1,5 +1,12 @@
 <%- include('./partials/header') %>
 
-<h1>Welcome To Your Schedule Planner!</h1>
+<% if (!user) { %>
+<h1>Welcome To The Personal Life Planner Application!</h1>
+<p>Please log in to access all features of the app...</p>
+<% } %>
+
+<% if (user) { %>
+    <h1>Welcome To Your Personal Life Planner!</h1>
+<% } %>
 
 <%- include('./partials/footer') %>

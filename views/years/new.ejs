@@ -1,26 +1,28 @@
 <%- include('../partials/header') %>
-<h2>Set Your Goals Below</h2>
-<form action="/years" method="POST">
-  <label>Year:</label>
-  <input type="number" name="year" min="2023">
-  <label>Goal:</label>
-  <input type="text" name="goal">
-  <label>Description:</label>
-  <textarea name="description"></textarea><br>
-  <label>Priority</label>
-  <select name="priority">
-    <option value="very-important">Very Important</option> 
-    <option value="moderate">Moderately Important</option> 
-    <option value="mild">Mildly Important</option> 
-    <option value="not">Not Important</option> 
-    </select>
-  <label>Completed:</label>
+<% if (user) { %>
+  <h2>Set Your Goals Below</h2>
+  <form action="/years" method="POST">
+    <label>Year:</label>
+    <input type="number" name="year" min="2023">
+    <label>Goal:</label>
+    <input type="text" name="goal">
+    <label>Description:</label>
+    <textarea name="description"></textarea><br>
+    <label>Priority</label>
     <select name="priority">
-        <option value="yes">Yes</option> 
-        <option value="no">No</option> 
-    </select>
-  <button type="submit">Add Yearly Goal</button>
-</form>
+      <option value="very-important">Very Important</option> 
+      <option value="moderate">Moderately Important</option> 
+      <option value="mild">Mildly Important</option> 
+      <option value="not">Not Important</option> 
+      </select>
+    <label>Completed:</label>
+      <select name="priority">
+          <option value="yes">Yes</option> 
+          <option value="no">No</option> 
+      </select>
+    <button type="submit">Add Yearly Goal</button>
+  </form>
+<% } %>
 
 
 <%- include('../partials/footer') %>

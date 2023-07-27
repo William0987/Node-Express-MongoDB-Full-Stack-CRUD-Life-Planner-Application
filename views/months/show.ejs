@@ -5,7 +5,7 @@
     <% month.forEach(function(month){ %>
         <div>Plan: <%= month.plan %></div>
         <div>Starting Day Number Within Month: <%= month.dayNumber %></div>
-        <div>Number of Days The Plan Will Span<%= month.daySpan %></div>
+        <div>Number of Days The Plan Will Span: <%= month.daySpan %></div>
         <div>Completed: <%= month.completed %></div>
         <form action="/months/<%= month.id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>

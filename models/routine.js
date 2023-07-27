@@ -13,7 +13,14 @@ const routineSchema = new Schema({
     },
     startingTime: {
         type: Number
-    }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
 }, {
    timestamps: true
 });

@@ -2,7 +2,7 @@ const Year = require("../models/year");
 
 async function index(req, res) {
     const years = await Year.find({});
-    res.render("years/index", { title: "All Set Yearly Goals", years});
+    res.render("years/index", { title: "All Yearly Goals", years});
 };
 
 async function show(req, res) {
@@ -20,6 +20,9 @@ function newGoal(req, res) {
 }
 
 async function create(req, res) {
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
+  req.body.userAvatar = req.user.avatar;
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     }
