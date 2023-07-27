@@ -4,11 +4,14 @@
 <section>
     <div>Year: <%= year.year %></div>
     <div>Goal: <%= year.goal %></div>
-    <div>Description: <%= year.description %></div>
+    <div>Description: <%= year.descriptionGoal %></div>
     <div>Priority: <%= year.priority %></div>
-    <div>Completed: <%= year.completed %></div>
+    <div>Completed: <%= year.completedCheck %></div>
     <form action="/years/<%= year.id %>?_method=DELETE" method="POST">
     <button type="submit">Delete</button>
+    </form>
+    <a href = "/years/<%= year.id %>/edit">Edit Routine</a>
+    <a href = "/years"><button>Back To All Goals Page</button></a>
 </section>
 
 <%- include('../partials/footer') %>

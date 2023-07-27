@@ -11,5 +11,4 @@ router.post('/', ensureLoggedIn, routinesCtrl.create);
 router.delete('/:day', ensureLoggedIn, routinesCtrl.delete);
 router.put('/:day', ensureLoggedIn, routinesCtrl.update);
 
-
-module.exports = router;
+module.exports = router;  

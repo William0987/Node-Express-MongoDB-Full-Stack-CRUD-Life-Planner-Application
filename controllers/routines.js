@@ -31,7 +31,7 @@ async function show(req, res){
   console.log(str);
   const routine = await Routine.find({"day": req.params.day})
   console.log(routine);
-  res.render("routines/show", {title: "All Routines", routine});
+  res.render("routines/show", {title: "All Routines", routine, day: req.params.day});
 }
 
 async function create(req, res) {

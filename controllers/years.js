@@ -23,17 +23,16 @@ async function create(req, res) {
   req.body.user = req.user._id;
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
-    for (let key in req.body) {
-      if (req.body[key] === '') delete req.body[key];
-    }
-    try {
-      await Year.create(req.body);
-      res.redirect('/years');
-    } catch (err) {
-      console.log(err);
-      res.render('years/new', { errorMsg: err.message });
-    }
+  console.log(req.body);
+  const goal = new Year(req.body);
+  try {
+    await goal.save();
+    res.redirect(`/years`);
+  } catch (e) {
+    console.log(e.message);
+    res.redirect(`/years/new`);
   }
+}
 
 async function deleteGoal(req, res) {
   await Year.findOneAndDelete(
@@ -44,7 +43,7 @@ async function deleteGoal(req, res) {
 
 async function edit(req, res) {
   const goal = await Year.findOne({_id: req.params.id});
-  if (!goal) return res.redirect('/years/show');
+  if (!goal) return res.redirect('/years');
   res.render('years/edit', { goal });
 }
 

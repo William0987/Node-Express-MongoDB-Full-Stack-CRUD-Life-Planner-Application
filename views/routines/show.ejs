@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<h2><%= routine.day %> Routines</h2>
+<h2><%= day %> Routines</h2>
 
 <section>
     <% routine.forEach(function(routine){ %>
@@ -12,5 +12,7 @@
         </form>
     <% }) %>
 </section>
+
+<a href = "/routines"><button>Back To All Weekly Routines Details Page</button></a>
 
 <%- include('../partials/footer') %>

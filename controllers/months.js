@@ -28,7 +28,7 @@ async function index(req, res) {
     lengthArr.push(oct.length);
     lengthArr.push(nov.length);
     lengthArr.push(dec.length);
-    res.render("months/index", { title: "All Plans", months, lengthArr });
+    res.render("months/index", { title: "All Plans", months, lengthArr});
 };
 
 function newPlan(req, res) {

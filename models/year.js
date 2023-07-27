@@ -8,13 +8,13 @@ const yearSchema = new Schema({
     goal: {
         type: String
     },
-    description: {
+    descriptionGoal: {
         type: String
     },
     priority: {
         type: String
     },
-    completed: {
+    completedCheck: {
         type: String
     },
     user: {
@@ -25,7 +25,7 @@ const yearSchema = new Schema({
     userName: String,
     userAvatar: String
 }, {
-    timestamps: true,
+    timestamps: true
 });
 
 module.exports = mongoose.model("Year", yearSchema);
