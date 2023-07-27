@@ -57,13 +57,6 @@ async function create(req, res) {
     }
   }
 
-async function deletePlan(req, res) {
-  await Month.findOneAndDelete(
-    {_id: req.params.month}
-  );
-  res.redirect('/months/show');
-}
-
 async function edit(req, res) {
   const month = await Month.findOne({_id: req.params.month});
   if (!month) return res.redirect('/months/show');
@@ -77,13 +70,27 @@ async function update(req, res) {
       req.body,
       {new: true}
     );
-    return res.redirect(`/months/${updatedPlan._id}`);
+    return res.redirect(`/months/${updatedPlan.month}`);
   } catch (e) {
     console.log(e.message);
     return res.redirect('/months');
   }
 }
 
+async function deletePlan(req, res) {
+  console.log(req.body);
+  try {
+    const deletedPLan = await Month.findOneAndDelete(
+      {_id: req.params.month},
+      req.body,
+      {new: true}
+    );
+    return res.redirect(`/months/${deletedPlan.month}`);
+  } catch (e) {
+    console.log(e.message);
+    return res.redirect('/months');
+  }
+}
 
 module.exports = {
     index,

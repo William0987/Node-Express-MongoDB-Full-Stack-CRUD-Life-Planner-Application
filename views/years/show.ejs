@@ -1,12 +1,14 @@
 <%- include('../partials/header') %>
 
-<h2>Routines Listed</h2>
+<h2>Goal Listed</h2>
 <section>
     <div>Year: <%= year.year %></div>
     <div>Goal: <%= year.goal %></div>
     <div>Description: <%= year.description %></div>
     <div>Priority: <%= year.priority %></div>
     <div>Completed: <%= year.completed %></div>
+    <form action="/years/<%= year.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
 </section>
 
 <%- include('../partials/footer') %>

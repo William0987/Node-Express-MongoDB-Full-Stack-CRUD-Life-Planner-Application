@@ -5,8 +5,6 @@
     <tr>
       <th>Year:</th>
       <th>Goal:</th>
-      <th>Description:</th>
-      <th>Priority:</th>
       <th>Completed:</th>
     </tr>
   </thead>
@@ -15,10 +13,8 @@
       <tr>
         <td><%= y.year %></td>
         <td><%= y.goal %></td>
-        <td><%= y.description %></td>
-        <td><%= y.priority %></td>
         <td><%= y.completed %></td>
-        <td><a href="/years/<%= y._id %>">Edit Goal</a></td>
+        <td><a href="/years/<%= y._id %>">DETAILS</a></td>
       </tr>
       <% }); %>
     </tbody>

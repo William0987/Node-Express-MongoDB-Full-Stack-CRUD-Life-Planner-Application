@@ -35,45 +35,53 @@ async function show(req, res){
 }
 
 async function create(req, res) {
-    for (let key in req.body) {
-      if (req.body[key] === '') delete req.body[key];
-    }
-    try {
-      await Routine.create(req.body);
-      res.redirect('/routines');
-    } catch (err) {
-      console.log(err);
-      res.render('routines/index', { errorMsg: err.message });
-    }
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key];
   }
-
-async function deleteRoutine(req, res) {
-  await Routine.findOneAndDelete(
-    {_id: req.params.day}
-  );
-  res.redirect('/routines/show');
+  try {
+    await Routine.create(req.body);
+    res.redirect('/routines');
+  } catch (err) {
+    console.log(err);
+    res.render('routines/index', { errorMsg: err.message });
+  }
 }
 
 async function edit(req, res) {
   const routine = await Routine.findOne({_id: req.params.day});
-  if (!routine) return res.redirect('/routines/show');
+  if (!routine) return res.redirect('/routines');
   res.render('routines/edit', { routine });
 }
 
 async function update(req, res) {
+  console.log(req.body);
   try {
     const updatedRoutine = await Routine.findOneAndUpdate(
       {_id: req.params.day},
       req.body,
       {new: true}
     );
-    return res.redirect(`/routines/${updatedRoutine._id}`);
+    return res.redirect(`/routines/${updatedRoutine.day}`);
   } catch (e) {
     console.log(e.message);
     return res.redirect('/routines');
   }
 }
 
+async function deleteRoutine(req, res) {
+  console.log(req.body);
+  try {
+    const deletedRoutine = await Routine.findOneAndDelete(
+      {_id: req.params.day},
+      req.body,
+      {new: true}
+    );
+    return res.redirect(`/routines/${deletedRoutine.day}`);
+  } catch (e) {
+    console.log(e.message);
+    return res.redirect('/routines');
+  }
+}
 
 module.exports = {
     index,

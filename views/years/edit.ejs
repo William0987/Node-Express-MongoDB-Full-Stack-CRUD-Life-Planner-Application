@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<form action="/years/<%= year.id %>?_method=PUT" method="POST">
+    <label>Year:</label>
+    <input type="number" name="year" value="<%= year.year %>"><br>
+    <label>Goal:</label>
+    <input type="string" name="goal" value="<%= year.goal %>"><br>
+    <label>Description:</label>
+    <textarea name="description"><%= year.description %></textarea><br>
+    <button type="submit">Update Routine</button>
+    <label>Priority:</label>
+    <select name="priority" value="<%= year.priority %>">
+        <option value="very-important">Very Important</option> 
+        <option value="moderate">Moderately Important</option> 
+        <option value="mild">Mildly Important</option> 
+        <option value="not">Not Important</option> 
+    </select>
+    <label>Completed:</label>
+    <select name="completed" value="<%= year.completed %>">
+        <option value="yes">Yes</option> 
+        <option value="no">No</option> 
+    </select>
+</form>
+
+<%- include('../partials/footer') %>

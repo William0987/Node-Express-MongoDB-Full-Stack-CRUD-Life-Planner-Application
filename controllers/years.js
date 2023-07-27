@@ -32,9 +32,40 @@ async function create(req, res) {
     }
   }
 
+async function deleteGoal(req, res) {
+  await Year.findOneAndDelete(
+    {_id: req.params.id}
+  );
+  res.redirect('/years');
+}
+
+async function edit(req, res) {
+  const goal = await Year.findOne({_id: req.params.id});
+  if (!goal) return res.redirect('/years/show');
+  res.render('years/edit', { goal });
+}
+
+async function update(req, res) {
+  try {
+    const updatedGoal = await Year.findOneAndUpdate(
+      {_id: req.params.id},
+      req.body,
+      {new: true}
+    );
+    return res.redirect(`/years/${updatedGoal.id}`);
+  } catch (e) {
+    console.log(e.message);
+    return res.redirect('/years');
+  }
+}
+
+
 module.exports = {
     index,
     show,
     new: newGoal,
-    create 
+    create,
+    delete: deleteGoal,
+    edit,
+    update
 }

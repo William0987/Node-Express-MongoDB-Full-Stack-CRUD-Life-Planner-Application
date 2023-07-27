@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<form action="/months/<%= month.id %>?_method=PUT" method="POST">
+    <label>Plan:</label>
+    <textarea name="plan"><%= month.plan %></textarea><br>
+    <label>Starting Day Number Within Month:</label>
+    <input type="number" name="dayNumber" value="<%= month.dayNumber %>"><br>
+    <label>Number of Days The Plan Will Span:</label>
+    <input type="number" name="daySpan" value="<%= month.daySpan %>"><br>
+    <label>Completed:</label>
+    <select name="completed" value="<%= month.completed %>">
+        <option value="yes">Yes</option> 
+        <option value="no">No</option> 
+    </select>
+    <button type="submit">Update Routine</button>
+</form>
+
+<%- include('../partials/footer') %>
