@@ -20,7 +20,8 @@ The application essentially acts as a life planner, where the user can set weekl
 - HTML
 
 # GETTING STARTED
-- App Link: 
+- App Link: https://William0987.github.io/Node-Express-MongoDB-Full-Stack-CRUD-Life-Planner-Application/
+
 - Trello Board: https://trello.com/b/KUz3Z1Ya/project-2 
 
 
