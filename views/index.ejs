@@ -1,12 +1,16 @@
 <%- include('./partials/header') %>
 
 <% if (!user) { %>
-<h1>Welcome To The Personal Life Planner Application!</h1>
-<p>Please log in to access all features of the app...</p>
+<div class="welcome-page">
+    <h1 class="welcome-words">Welcome To The Personal Life Planner Application!</h1>
+    <p class="not-user">Please log in to access all features of the app and start planning!</p>
+</div>
 <% } %>
 
 <% if (user) { %>
-    <h1>Welcome To Your Personal Life Planner!</h1>
+<div class="welcome-page">
+    <h1 class="welcome-words">Welcome To Your Personal Life Planner Application!</h1>
+</div>
 <% } %>
 
 <%- include('./partials/footer') %>

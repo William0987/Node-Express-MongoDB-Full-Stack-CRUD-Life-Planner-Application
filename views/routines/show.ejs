@@ -1,18 +1,36 @@
 <%- include('../partials/header') %>
-<h2><%= day %> Routines</h2>
+<h2 class="pageTitle"><%= day %> Routines</h2>
 
-<section>
+<table class="showCalendar">
+    <thead>
+        <th>Routine</th>
+        <th>Duration (In Hours)</th>
+        <th>Starting Time</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
     <% routine.forEach(function(routine){ %>
-        <div>Routine: <%= routine.routine %></div>
-        <div>Duration: <%= routine.duration %></div>
-        <div id="startingTime">Starting Time: <%= routine.startingTime %></div>
-        <form action="/routines/<%= routine.id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-        <a href = "/routines/<%= routine.id %>/edit">Edit Routine</a>
-        </form>
+        <tr>
+            <td><%= routine.routine %></td>
+            <td><%= routine.duration %></td>
+            <td><%= routine.startingTime %></td>
+            <td>
+                <a href = "/routines/<%= routine.id %>/edit">
+                    <button class="editBtn">Edit</button>
+                </a>
+            </td>
+            <td>
+                <form action="/routines/<%= routine.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="deleteBtn">Delete</button>
+                </form>
+            </td>
+        </tr>
     <% }) %>
-</section>
+    </tbody>
 
-<a href = "/routines"><button>Back To All Weekly Routines Details Page</button></a>
+</table>
+
+<a href = "/routines"><button class="backBtn">Back To All Routines Page</button></a>
 
 <%- include('../partials/footer') %>

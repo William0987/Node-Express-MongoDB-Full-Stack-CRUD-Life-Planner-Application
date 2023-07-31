@@ -1,19 +1,39 @@
 <%- include('../partials/header') %>
-<h2><%= month.month %> Plans </h2>
+<h2 class="pageTitle"><%= months %> Plans </h2>
 
-<section>
+<table class="showCalendar">
+    <thead>
+        <tr>
+            <th>Plan</th>
+            <th>Starting Day Number Within Month</th>
+            <th>Number of Days The Plan Will Span</th>
+            <th>Completed</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
     <% month.forEach(function(month){ %>
-        <div>Plan: <%= month.plan %></div>
-        <div>Starting Day Number Within Month: <%= month.dayNumber %></div>
-        <div>Number of Days The Plan Will Span: <%= month.daySpan %></div>
-        <div>Completed: <%= month.completed %></div>
-        <form action="/months/<%= month.id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-        <a href = "/months/<%= month.id %>/edit">Edit Plan</a>
-        </form>
+        <tr>
+            <td><%= month.plan %></td>
+            <td><%= month.dayNumber %></td>
+            <td><%= month.daySpan %></td>
+            <td><%= month.completed %></td>
+            <td>
+                <a href = "/months/<%= month.id %>/edit">
+                <button class="editBtn">Edit Plan</button>
+                </a>
+            </td>
+            <td>
+                <form action="/months/<%= month.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="deleteBtn">Delete</button>
+                </form>
+            </td>
+        </tr>
     <% }) %>
-</section>
+    </tbody>
+</table>
 
-<a href = "/months"><button>Back To All Monthly Plan Details Page</button></a>
+<a href = "/months"><button class="backBtn">Back To All Plan Details Page</button></a>
 
 <%- include('../partials/footer') %>

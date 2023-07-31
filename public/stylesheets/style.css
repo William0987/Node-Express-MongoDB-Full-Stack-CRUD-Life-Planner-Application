@@ -1,28 +1,94 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: lightcyan;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-a {
-  color: #00B7FF;
+body{
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-image: url(../images/main_background.jpg);
+  background-repeat: no-repeat;
 }
 
-button {
-  display: inline-block;
-  margin-right: 10px;
-  color: red;
-  background-color: yellow;
-  border-radius: 25%;
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  padding: 20px 7%;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  align-items: center;
+  justify-content: space-between;
+  opacity: 95%;
 }
 
-nav{
-  justify-content: center;
-  margin: auto;
+header .app-name{
+  font-size: 30px;
+  font-weight: bold;
+  color: darkred;
 }
 
-h1{
-  padding-top: 180px;
+header .nav-bar ul{
+  list-style: none;
+}
+
+header .nav-bar ul li{
+  position: relative;
+  float: left;
+}
+
+header .nav-bar ul li a{
+  font-size: 15px;
+  color: gray;
+  display: block;
+  padding: 20px;
+}
+
+header .nav-bar ul li a:hover{
+  background: gray;
+  color: white;
+}
+
+header .nav-bar ul li ul{
+  width: 200px;
+  left: 0;
+  position: absolute;
+  background: white;
+  display: none;
+  opacity: 99%;
+}
+
+header .nav-bar ul li ul li{
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,.3);
+}
+
+header .nav-bar ul li ul li ul{
+  top: 0;
+  left: 200px;
+}
+
+header .nav-bar ul li:focus-within > ul,
+header .nav-bar ul li:hover > ul{
+  display: initial;
+}
+
+.welcome-page{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0px;
+  width: 900px;
+  transform: translate(-50%, -50%);
+}
+
+.welcome-words{
+  font-size: 35px;
 }
 
 th{
@@ -39,66 +105,227 @@ div{
   padding-bottom: 20px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+#login img {
+  height: 20px;
 }
 
-nav li {
+.calendar{
+  margin-top: 30px;
+  margin-left: 75vh;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  border-collapse: collapse;
+  overflow: hidden;
+  font-size: 0.9 em;
+  min-width: 400px;
+  border-radius: 5%;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: white; 
+}
+
+.calendar thead tr{
+  background-color: orange;
+  color: black;
+  text-align: left;
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar tbody tr{
+  border-bottom: 2px solid lightgrey;
+}
+
+.calendar tbody tr:nth-of-type(even){
+  background-color: lightcyan;
+}
+
+.calendar th,
+.calendar td{
+  padding: 12px 15px;
+}
+
+.calendar tbody tr:last-of-type{
+  border-bottom: 3px solid orange;
+}
+
+.indexButton{
+  margin-top: 30px;
+  margin-left: 660px;
+  margin-bottom: 30px;
   display: inline-block;
-  margin-right: 20px;
-  position: relative;
+  color: black;
+  background-color: lightgray;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
 }
 
-nav li.dropdown:hover .dropdown-content {
+#routineNewBtn{
+  margin-left: 640px;
+}
+
+.pageTitle{
+  margin-top: 120px;
+  margin-left: 600px;
+}
+
+#goalTitle{
+  margin-top: 120px;
+  margin-left: 560px;
+}
+
+#routineIndex{
+  margin-left: 640px;
+  margin-bottom: 20px;
+}
+
+#addGoalBtn{
+  margin-left: 640px;
+}
+
+.newformTitle{
+  margin-top: 120px;
+  margin-left: 40px;
+}
+
+fieldset{
+  min-width: 200px;
+  padding: 1em 2em;
+  margin: 2em 0;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+}
+
+legend{
+  padding: 0 0.3em;
+  font-size: 1.4em;
+  color: black;
+}
+
+label{
   display: block;
+  margin-top: 1em;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f9f9f9;
-  padding: 5px;
+label:first-of-type{
+  margin-top: 0;
 }
 
-.dropdown-content li {
-  margin-bottom: 5px;
+textarea{
+  padding: 0.7em;
+  min-width: 80%;
+  min-height: 10em;
+  border: 2px solid gray
 }
 
-.dropdown-content li a {
-  color: #333;
-  text-decoration: none;
+input{
+  padding: 0.7em;
+  border: 2px solid gray;
 }
 
-table{
-  padding-bottom: 60px;
+select{
+  border: 2px solid gray;
 }
 
-#startingTime{
-  padding-bottom: 40px;
+.addBtn{
+  margin-left: 20px;
+  border-radius: 7px;
+  padding: 0.8em;
+  background-color: black;
+  color: white;
+  opacity: 80%
 }
 
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+.showCalendar{
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  border-collapse: collapse;
+  overflow: hidden;
+  font-size: 0.9 em;
+  min-width: 400px;
+  border-radius: 5%;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: white; 
 }
 
-.login img {
-  height: 30px;
+.showCalendar thead tr{
+  background-color: rgb(52, 197, 197);
+  color: black;
+  text-align: left;
+  font-weight: bold;
+  text-align: center;
 }
 
-.review-user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.showCalendar tbody tr{
+  border-bottom: 2px solid lightgrey;
 }
 
-.review-user img {
-  border-radius: 50%;
-  height: 40px;
+.showCalendar tbody tr:nth-of-type(even){
+  background-color: lightcyan;
+}
+
+.showCalendar th,
+.showCalendar td{
+  padding: 12px 15px;
+}
+
+.showCalendar tbody tr:last-of-type{
+  border-bottom: 3px solid rgb(33, 168, 168);
+}
+
+.backBtn{
+  margin-top: 130px;
+  margin-left: 580px;
+  margin-bottom: 30px;
+  display: inline-block;
+  color: black;
+  background-color: lightgray;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.editBtn{
+  display: inline-block;
+  color: black;
+  background-color: #EEEEEE;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.deleteBtn{
+  display: inline-block;
+  color: black;
+  background-color: #EEEEEE;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.app-name{
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1{
+  font-family: 'Lobster', cursive;
+}
+
+p{
+  font-family: 'Source Code Pro', monospace;
+}
+
+h2{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 35px;
+}
+
+div{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 150px;
 }

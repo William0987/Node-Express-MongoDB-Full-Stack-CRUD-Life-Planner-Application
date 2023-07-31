@@ -1,11 +1,12 @@
 <%- include('../partials/header') %>
-<h2>All Yearly Goals You Have Set</h2>
-<table >
+<h2 class="pageTitle" id="goalTitle">All Yearly Goals You Have Set</h2>
+<table class="calendar">
   <thead>
     <tr>
-      <th>Year:</th>
-      <th>Goal:</th>
-      <th>Completed:</th>
+      <th>Year</th>
+      <th>Goal</th>
+      <th>Completed (Yes/No)</th>
+      <th>Details</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,6 @@
     </tbody>
   </table>
 
-  <a href="years/new"><button>Add New Year Goal</button></a>
+  <a href="years/new"><button class="indexButton" id="addGoalBtn">Add New Year Goal</button></a>
   
 <%- include('../partials/footer') %>

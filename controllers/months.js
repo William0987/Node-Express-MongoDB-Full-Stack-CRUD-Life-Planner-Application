@@ -41,7 +41,7 @@ async function show(req, res){
   console.log(str);
   const month = await Month.find({"month": req.params.month})
   console.log(month);
-  res.render("months/show", {title: "All Plans", month});
+  res.render("months/show", {title: "All Plans", month, months: req.params.month});
 }
 
 async function create(req, res) {

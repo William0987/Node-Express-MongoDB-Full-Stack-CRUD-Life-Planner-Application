@@ -1,17 +1,37 @@
 <%- include('../partials/header') %>
 
-<h2>Goal Listed</h2>
-<section>
-    <div>Year: <%= year.year %></div>
-    <div>Goal: <%= year.goal %></div>
-    <div>Description: <%= year.descriptionGoal %></div>
-    <div>Priority: <%= year.priority %></div>
-    <div>Completed: <%= year.completedCheck %></div>
-    <form action="/years/<%= year.id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-    </form>
-    <a href = "/years/<%= year.id %>/edit">Edit Routine</a>
-    <a href = "/years"><button>Back To All Goals Page</button></a>
-</section>
+<h2 class="pageTitle">Goal Listed</h2>
 
+<table class="showCalendar">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Goal</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Completed (Yes/No)</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= year.year %></td>
+            <td><%= year.goal %></td>
+            <td><%= year.descriptionGoal %></td>
+            <td><%= year.priority %></td>
+            <td><%= year.completedCheck %></td>
+            <td><a href = "/years/<%= year.id %>/edit">
+                <button class="editBtn">Edit</button>
+                </a>
+            </td>
+            <td><form action="/years/<%= year.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="deleteBtn">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<a href = "/years"><button class="backBtn">Back To All Goals Page</button></a>
 <%- include('../partials/footer') %>

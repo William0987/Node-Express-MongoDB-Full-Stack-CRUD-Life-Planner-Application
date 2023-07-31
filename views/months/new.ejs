@@ -1,11 +1,15 @@
 <%- include('../partials/header') %>
 <% if (user) { %>
-  <h2>Set Your Routines Below</h2>
+  <h2 class="newformTitle">Set Your Plan Below</h2>
   <form action="/months" method="POST">
-      <label>Plan:</label>
-      <textarea name="plan"></textarea>
-      <label>Month:</label>
-      <select name="month">
+    <fieldset>
+      <legend>New Plan</legend>
+
+      <label for="plan">Plan:</label>
+      <textarea name="plan" id="plan"></textarea>
+
+      <label for="month">Month:</label>
+      <select name="month" id="month">
         <option value="January">January</option> 
         <option value="February">February</option>
         <option value="March">March</option>
@@ -19,17 +23,22 @@
         <option value="November">November</option>
         <option value="December">December</option> 
       </select>
-      <label>Starting Day Number Within Month:</label>
-      <input type="number" name="dayNumber">
-      <label>Number of Days The Plan Will Span:</label>
-      <input type="number" name="daySpan">
-      <label>Completed</label>
-      <select name="completed">
+
+      <label for="dayNumber">Starting Day Number Within Month:</label>
+      <input type="number" name="dayNumber" id="dayNumber" min="1" max="31">
+
+      <label for="daySpan">Number of Days The Plan Will Span:</label>
+      <input type="number" name="daySpan" id="daySpan" min="1">
+
+      <label for="completed">Completed</label>
+      <select name="completed" id="completed">
           <option value="Yes">Yes</option> 
           <option value="No">No</option> 
       </select>
-      <button type="submit">Add New Plan</button>
+    </fieldset>
+    <button type="submit" class="addBtn">Add New Plan</button>
   </form>
+
 <% } %>
 
 

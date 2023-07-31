@@ -1,7 +1,10 @@
 <%- include('../partials/header') %>
 <% if (user) { %>
-  <h2>Set Your Routines Below</h2>
+  <h2 class="newformTitle">Set Your Routine Below</h2>
   <form action="/routines" method="POST">
+    <fieldset>
+      <legend>New Routine</legend>
+
     <label>Day:</label>
       <select name="day">
         <option value="Monday">Monday</option> 
@@ -12,13 +15,18 @@
         <option value="Saturday">Saturday</option>
         <option value="Sunday">Sunday</option>
     </select>
+
     <label>Routine:</label>
     <textarea name="routine"></textarea>
-    <label>Duration:</label>
+
+    <label>Duration (In Hours):</label>
     <input type="number" name="duration">
+
     <label>Starting Time:</label>
-    <input type="number" name="startingTime">
-    <button type="submit">Add Weekly Routine</button>
+    <input type="time" name="startingTime">
+
+    </fieldset>
+    <button type="submit" class="addBtn">Add Routine</button>
   </form>
 <% } %>
 

@@ -4,50 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&family=Lobster&family=Londrina+Shadow&family=Pangolin&family=Roboto+Mono&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
   <title>Planner-App</title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <a href="/">HOME-PAGE</a>
-      <% if (user) { %>
-        &nbsp;|&nbsp;
-        <li class="dropdown">
-          <a href="/routines">Weekly Routine Planner</a>
-          <ul class="dropdown-content">
-            <li><a href="/routines/Monday">Monday</a></li>
-            <li><a href="/routines/Tuesday">Tuesday</a></li>
-            <li><a href="/routines/Wednesday">Wednesday</a></li>
-            <li><a href="/routines/Thursday">Thursday</a></li>
-            <li><a href="/routines/Friday">Friday</a></li>
-            <li><a href="/routines/Saturday">Saturday</a></li>
-            <li><a href="/routines/Sunday">Sunday</a></li>
-          </ul>
+  <header>
+    <a href="/" class="app-name">LIFE PLANNER</a>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="/">HOME-PAGE</a></li>
+        <% if (user) { %>
+        <li><a href="/routines">Weekly Routine Planner +</a>
+            <ul>
+              <li><a href="/routines/Monday">Monday</a></li>
+              <li><a href="/routines/Tuesday">Tuesday</a></li>
+              <li><a href="/routines/Wednesday">Wednesday</a></li>
+              <li><a href="/routines/Thursday">Thursday</a></li>
+              <li><a href="/routines/Friday">Friday</a></li>
+              <li><a href="/routines/Saturday">Saturday</a></li>
+              <li><a href="/routines/Sunday">Sunday</a></li>
+            </ul>
         </li>
-        &nbsp;|&nbsp;
-        <li class="dropdown">
-          <a href="/months">Monthly Planner</a>
-          <ul class="dropdown-content">
-            <li><a href="/months/January">January</a></li>
-            <li><a href="/months/February">February</a></li>
-            <li><a href="/months/March">March</a></li>
-            <li><a href="/months/April">April</a></li>
-            <li><a href="/months/May">May</a></li>
-            <li><a href="/months/June">June</a></li>
-            <li><a href="/months/July">July</a></li>
-            <li><a href="/months/August">August</a></li>
-            <li><a href="/months/September">September</a></li>
-            <li><a href="/months/October">October</a></li>
-            <li><a href="/months/November">November</a></li>
-            <li><a href="/months/December">December</a></li>
-          </ul>
+        <li>
+          <a href="/months">Monthly Planner +</a>
+            <ul>
+              <li><a href="/months/January">January</a></li>
+              <li><a href="/months/February">February</a></li>
+              <li><a href="/months/March">March</a></li>
+              <li><a href="/months/April">April</a></li>
+              <li><a href="#">More Months+</a>
+                <ul>
+                  <li><a href="/months/May">May</a></li>
+                  <li><a href="/months/June">June</a></li>
+                  <li><a href="/months/July">July</a></li>
+                  <li><a href="/months/August">August</a></li>
+                  <li><a href="/months/September">September</a></li>
+                  <li><a href="/months/October">October</a></li>
+                  <li><a href="/months/November">November</a></li>
+                  <li><a href="/months/December">December</a></li>
+                </ul>
+              </li>
+            </ul>
         </li>
-        &nbsp;|&nbsp;
-        <a href="/years">Yearly Goal Planner</a>
-        &nbsp;|&nbsp;
-        <a href="/logout">LOG OUT</a>
-      <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-      <% } %>
-    </ul>
-  </nav>
+        <li><a href="/years">Yearly Goal Planner</a></li>
+        <li><a href="/logout">LOG OUT</a></li>
+        <% } else { %>
+        <li><a href="/auth/google" id="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>

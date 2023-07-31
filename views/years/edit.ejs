@@ -1,25 +1,34 @@
 <%- include('../partials/header') %>
 
+<h2 class="newformTitle">Edit Your Goal Below</h2>
 <form action="/years/<%= goal.id %>?_method=PUT" method="POST">
-    <label>Year:</label>
-    <input type="number" name="year" value="<%= goal.year %>"><br>
-    <label>Goal:</label>
-    <input type="string" name="goal" value="<%= goal.goal %>"><br>
-    <label>Description:</label>
-    <textarea name="descriptionGoal"><%= goal.descriptionGoal %></textarea><br>
-    <button type="submit">Update Routine</button>
-    <label>Priority:</label>
-    <select name="priority" value="<%= goal.priority %>">
-        <option value="Very Important">Very Important</option> 
-        <option value="Moderately Important">Moderately Important</option> 
-        <option value="Mildly Important">Mildly Important</option> 
-        <option value="Not Important">Not Important</option> 
-    </select>
-    <label>Completed:</label>
-    <select name="completedCheck" value="<%= goal.completedCheck %>">
-        <option value="Yes">Yes</option> 
-        <option value="No">No</option> 
-    </select>
+    <fieldset>
+        <legend>Edit Goal</legend>
+
+        <label>Year:</label>
+        <input type="number" name="year" value="<%= goal.year %>"><br>
+
+        <label>Goal:</label>
+        <input type="string" name="goal" value="<%= goal.goal %>"><br>
+
+        <label>Description:</label>
+        <textarea name="descriptionGoal"><%= goal.descriptionGoal %></textarea><br>
+
+        <label>Priority:</label>
+        <select name="priority" value="<%= goal.priority %>">
+            <option value="Very Important">Very Important</option> 
+            <option value="Moderately Important">Moderately Important</option> 
+            <option value="Mildly Important">Mildly Important</option> 
+            <option value="Not Important">Not Important</option> 
+        </select>
+
+        <label>Completed:</label>
+        <select name="completedCheck" value="<%= goal.completedCheck %>">
+            <option value="Yes">Yes</option> 
+            <option value="No">No</option> 
+        </select>
+    </fieldset>
+    <button type="submit" class="addBtn">Update Routine</button>
 </form>
 
 <%- include('../partials/footer') %>

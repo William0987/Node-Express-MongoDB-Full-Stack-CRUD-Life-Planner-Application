@@ -1,13 +1,20 @@
 <%- include('../partials/header') %>
 
+<h2 class="newformTitle">Edit Your Routine Below</h2>
 <form action="/routines/<%= routine.id %>?_method=PUT" method="POST">
-    <label>Routine:</label>
-    <textarea name="routine"><%= routine.routine %></textarea><br>
-    <label>Duration:</label>
-    <input type="number" name="duration" value="<%= routine.duration %>"><br>
-    <label>Starting Time:</label>
-    <input type="number" name="startingTime" value="<%= routine.startingTime %>"><br>
-    <button type="submit">Update Routine</button>
+    <fieldset>
+        <legend>Edit Routine</legend>
+
+            <label>Routine:</label>
+            <textarea name="routine"><%= routine.routine %></textarea><br>
+    
+            <label>Duration (In Hours):</label>
+            <input type="number" name="duration" value="<%= routine.duration %>"><br>
+    
+            <label>Starting Time:</label>
+            <input type="time" name="startingTime" value="<%= routine.startingTime %>"><br>
+    </fieldset>
+    <button type="submit" class="addBtn">Update Routine</button>
 </form>
 
 <%- include('../partials/footer') %>
