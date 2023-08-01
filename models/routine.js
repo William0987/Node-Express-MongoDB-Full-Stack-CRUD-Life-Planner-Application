@@ -12,7 +12,7 @@ const routineSchema = new Schema({
         type: Number
     },
     startingTime: {
-        type: Number
+        type: String
     },
     user: {
         type: Schema.Types.ObjectId,
