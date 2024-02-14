@@ -14,8 +14,8 @@
     <a href="/" class="app-name">LIFE PLANNER</a>
     <nav class="nav-bar">
       <ul>
-        <li><a href="/">HOME-PAGE</a></li>
         <% if (user) { %>
+        <li><a href="/">HOME-PAGE</a></li>
         <li><a href="/routines">Weekly Routine Planner +</a>
             <ul>
               <li><a href="/routines/Monday">Monday</a></li>
@@ -51,7 +51,8 @@
         <li><a href="/years">Yearly Goal Planner</a></li>
         <li><a href="/logout">LOG OUT</a></li>
         <% } else { %>
-        <li><a href="/auth/google" id="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+        <li id="home-page"><a href="/">HOME-PAGE</a></li>
+        <li><a href="/auth/google" id="login">LOG IN&nbsp;<img id="login-image" src="https://i.imgur.com/FHjYyi0.png"></a></li>
         <% } %>
       </ul>
     </nav>
